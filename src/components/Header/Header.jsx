@@ -2,7 +2,6 @@ import React from "react";
 import { HeaderMenu } from "./";
 import { useDispatch } from "react-redux";
 import { push } from "connected-react-router";
-import logo from "../../assets/images/logo.png";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -49,7 +48,7 @@ const Header = () => {
             className={`gothic ${classes.logo}`}
             onClick={() => dispatch(push("/"))}
           >
-            <img src={logo} alt="Torahack Logo" width="132px" />
+            trpg-app
           </h1>
           <HeaderMenu />
         </Toolbar>
