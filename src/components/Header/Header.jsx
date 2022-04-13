@@ -48,7 +48,7 @@ const Header = () => {
             className={`gothic ${classes.logo}`}
             onClick={() => dispatch(push("/"))}
           >
-            trpg-app
+            trpg app
           </h1>
           <HeaderMenu />
         </Toolbar>
