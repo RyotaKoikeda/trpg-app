@@ -1,0 +1,13 @@
+@import "./mixin";
+
+.top {
+  &__signin {
+    max-width: 400px;
+    padding: 0 20px;
+    margin: 60px auto;
+    &_button {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+}

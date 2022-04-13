@@ -1,0 +1,44 @@
+@import "../../assets/css/mixin.scss";
+
+.skill {
+  margin-top: 60px;
+  &_wrap {
+    overflow-x: scroll;
+    &_contents {
+      min-width: 780px;
+    }
+  }
+  &_flex {
+    display: flex;
+    height: 68px;
+    align-items: center;
+    margin: 4px 0;
+    gap: 0 16px;
+    border-radius: 8px;
+  }
+  &_alert {
+    background: #fdeded;
+  }
+  &__box {
+    display: flex;
+    width: 14%;
+    margin-left: 12px;
+    gap: 0 16px;
+    &_right {
+      display: flex;
+    }
+  }
+  &__calc1 {
+    width: 240px;
+  }
+  &__calc2 {
+    display: flex;
+    gap: 0 24px;
+    p {
+      width: 72px;
+    }
+  }
+  &_init {
+    margin-left: 12px;
+  }
+}

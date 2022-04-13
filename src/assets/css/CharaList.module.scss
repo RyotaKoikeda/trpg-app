@@ -1,0 +1,16 @@
+@import "./mixin";
+
+.list {
+  max-width: 600px;
+  padding: 0 20px;
+  margin: 0 auto;
+  &_category {
+    max-width: 160px;
+    margin: 60px 0 32px auto;
+  }
+  &_page {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
