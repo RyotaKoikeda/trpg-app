@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <Router />;
+      <Router />
     </>
   );
 };
