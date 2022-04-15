@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../assets/css/Top.module.scss";
 import { PrimaryButton, TextInput } from "../components/UiKit";
 import { push } from "connected-react-router";
 import { signIn, signOut } from "../reducks/users/operations";
@@ -21,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     background: theme.palette.primary.light,
-    boxShadow:
-      "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+    boxShadow: "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
   },
 }));
 
@@ -50,7 +48,7 @@ const Home = () => {
   );
 
   return (
-    <main className={`${styles.top} main`}>
+    <main className="main">
       <div className="container">
         {!isSignedIn && (
           <>
@@ -58,7 +56,7 @@ const Home = () => {
               <LockIcon />
             </div>
             <h2 className="page-title">サインイン</h2>
-            <div className={styles.top__signin}>
+            <div className="form-wrap">
               <TextInput
                 fullWidth={true}
                 label={"メールアドレス"}
@@ -79,11 +77,15 @@ const Home = () => {
                 type={"password"}
                 onChange={inputPassword}
               />
-              <div className={styles.top__signin_button}>
-                <PrimaryButton
-                  label={"サインイン"}
-                  onClick={() => dispatch(signIn(email, password))}
-                />
+              <div className="spacer-small" />
+              <div className="center">
+                <PrimaryButton label={"サインイン"} onClick={() => dispatch(signIn(email, password))} />
+              </div>
+              <div className="spacer-small" />
+              <div className="center">
+                <p>メールアドレス admin@gmail.com</p>
+                <div className="spacer-small" />
+                <p>パスワード Admin0123</p>
               </div>
             </div>
           </>
@@ -95,22 +97,13 @@ const Home = () => {
             </div>
             <h2 className="page-title">メニュー</h2>
             <Box className={classes.menu}>
-              <Button
-                className={classes.button}
-                onClick={() => dispatch(push("/edit"))}
-              >
+              <Button className={classes.button} onClick={() => dispatch(push("/edit"))}>
                 編集
               </Button>
-              <Button
-                className={classes.button}
-                onClick={() => dispatch(push("/list"))}
-              >
+              <Button className={classes.button} onClick={() => dispatch(push("/list"))}>
                 リスト
               </Button>
-              <Button
-                className={classes.button}
-                onClick={() => dispatch(signOut())}
-              >
+              <Button className={classes.button} onClick={() => dispatch(signOut())}>
                 サインアウト
               </Button>
             </Box>

@@ -1,21 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import styles from "../assets/css/CharaEdit.module.scss";
-import {
-  Chapare,
-  Data,
-  Status,
-  Skill,
-  Combat,
-  ThreeMajor,
-  Major,
-  Action,
-  Nego,
-  Intell,
-  Weapon,
-  Pack,
-  Memo,
-} from "../components/Edit";
+import { Chapare, Data, Status, Skill, Combat, ThreeMajor, Major, Action, Nego, Intell, Weapon, Pack, Memo } from "../components/Edit";
 import { PrimaryButton } from "../components/UiKit";
 import { saveChara } from "../reducks/charas/operations";
 import { db } from "../firebase";
@@ -1407,12 +1392,7 @@ const CharaEdit = () => {
   useEffect(() => {
     const nextCombat = combat;
     nextCombat[0].init = total[3] * 2;
-    nextCombat[0].total =
-      nextCombat[0].init +
-      nextCombat[0].job +
-      nextCombat[0].interest +
-      nextCombat[0].growth +
-      nextCombat[0].etc;
+    nextCombat[0].total = nextCombat[0].init + nextCombat[0].job + nextCombat[0].interest + nextCombat[0].growth + nextCombat[0].etc;
     setCombat(nextCombat);
 
     const nextThreeMajor = threeMajor;
@@ -1426,12 +1406,7 @@ const CharaEdit = () => {
 
     const nextNego = nego;
     nextNego[5].init = total[7] * 5;
-    nextNego[5].total =
-      nextNego[5].init +
-      nextNego[5].job +
-      nextNego[5].interest +
-      nextNego[5].growth +
-      nextNego[5].etc;
+    nextNego[5].total = nextNego[5].init + nextNego[5].job + nextNego[5].interest + nextNego[5].growth + nextNego[5].etc;
     setNego(nextNego);
 
     const nextIntell = intell;
@@ -1439,7 +1414,7 @@ const CharaEdit = () => {
   }, [total]);
 
   return (
-    <main className={`${styles.edit} main`}>
+    <main className="main">
       <div className="container">
         <div className="page-logo">
           <EditIcon />
@@ -1493,25 +1468,12 @@ const CharaEdit = () => {
             >
               保存する
             </Button>
-            <Button
-              className={classes.button}
-              onClick={() => setChapareFlag(!chapareFlag)}
-            >
+            <Button className={classes.button} onClick={() => setChapareFlag(!chapareFlag)}>
               チャパレ
             </Button>
           </ButtonGroup>
         </Box>
-        {chapareFlag && (
-          <Chapare
-            total={total}
-            combat={combat}
-            threeMajor={threeMajor}
-            major={major}
-            action={action}
-            nego={nego}
-            intell={intell}
-          />
-        )}
+        {chapareFlag && <Chapare total={total} combat={combat} threeMajor={threeMajor} major={major} action={action} nego={nego} intell={intell} />}
         <Data
           name={name}
           setName={setName}
@@ -1577,11 +1539,7 @@ const CharaEdit = () => {
           intell={intell}
         />
         <Combat combat={combat} setCombat={setCombat} initSwitch={initSwitch} />
-        <ThreeMajor
-          threeMajor={threeMajor}
-          setThreeMajor={setThreeMajor}
-          initSwitch={initSwitch}
-        />
+        <ThreeMajor threeMajor={threeMajor} setThreeMajor={setThreeMajor} initSwitch={initSwitch} />
         <Major major={major} setMajor={setMajor} initSwitch={initSwitch} />
         <Action action={action} setAction={setAction} initSwitch={initSwitch} />
         <Nego nego={nego} setNego={setNego} initSwitch={initSwitch} />
@@ -1589,7 +1547,8 @@ const CharaEdit = () => {
         <Weapon weapon={weapon} setWeapon={setWeapon} />
         <Pack pack={pack} setPack={setPack} />
         <Memo memo={memo} setMemo={setMemo} />
-        <div className={styles.edit_button}>
+        <div className="spacer-small" />
+        <div className="center">
           <PrimaryButton
             label={"保存する"}
             onClick={() =>
